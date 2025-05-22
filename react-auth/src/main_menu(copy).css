@@ -1,0 +1,280 @@
+html{
+    height: 100%;
+}
+body{
+    margin:0;
+    font-family:"League Spartan", serif;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+li{
+    cursor: auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+p{
+    margin: 0;
+}
+
+.main_menu{
+    height: 80px;
+    display: flex;
+    align-items: center;   
+    background-color: rgba(209, 156, 156, 0.733); 
+    padding: 0 10px 0 10px;
+}
+
+.main_menu_list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+
+.search-input{
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: rgba(153, 94, 94, 0);
+    outline: none;
+    padding: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, font-size 0.3s ease, width 0.3s ease;
+    width: 150px;
+    font-family: "League Spartan", sans-serif;
+}
+
+.search-input::placeholder
+{
+    color: black;
+}
+
+.search-input:focus::placeholder{
+    color: transparent;
+}
+
+.search-input:focus{
+    border-color: rgb(0, 0, 0);
+    width: 200px;
+}
+
+.search-button
+{
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+.main_menu_segments{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+.main_menu_segments img{
+    width: 30px;
+    height: 30px;
+}
+
+#center_main_menu img{
+    height: 50px;
+    width: 50px;
+}
+.search-container
+{
+    display: flex;
+    align-items: center;
+    cursor: auto;
+}
+
+#barbati{
+    border-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid;
+    cursor: pointer;
+}
+a.gen{
+    transition: border-color 0.3s ease, color 0.3s ease;
+    
+}
+
+a.gen:hover{
+    border-color: rgb(196, 160, 160);
+    color: rgb(156, 126, 126);
+}
+
+.main_menu_list > #center_main_menu{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width:900px){
+    .search-input{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:600px){
+    #left_main_menu,#right_main_menu{
+        display: none;
+    }
+}
+
+
+/* MAIN MENU(deasupra)----------------------------------------------*/
+
+.categorii{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2px;
+}
+
+.grid_container{
+    position: static;
+}
+ul.categorii > li {
+    position: relative;
+    padding: 10px;
+    font-size: 1.4rem;
+    font-weight: 350;
+    color: black;
+    cursor: pointer;
+    border-bottom: white;
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
+}
+
+ul.categorii > li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    color: inherit;
+}
+
+ul.categorii > li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+ul.categorii > li.sale{
+    color: red;
+}
+
+li.sale::after
+{
+    background-color: red;
+}
+li.sale:hover::after{
+    background-color: red;
+}
+ul.categorii > li:hover::after {
+    width: 100%;
+    
+}
+
+ul.categorii > li.sale::after{
+    background-color: red;
+}
+
+@media only screen and (max-width: 650px){
+    ul.categorii > li{
+        font-size: 1.2rem;
+    }
+}
+
+
+/*SUB-MENU(deasupra)--------------------------------- */
+
+.dropdown_area
+{
+    font-size: 2rem;
+    display: none;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    z-index: 100;
+    
+}
+
+.dropdown_area.show{
+    display: block;
+}
+
+ul.dropdown_info{
+    display: block;
+    pointer-events: all;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+
+.dropdown_info {
+    top: 100%;
+    left:0;
+    display: block;
+    position: absolute; /* Position it relative to the parent <li> */
+    background-color:rgb(240, 237, 237); /* Add a background color */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    z-index: 1000; /* Ensure it appears above other elements */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    width: 100vw;
+}
+
+.dropdown_info ul li{
+    cursor:auto;
+    padding: 5px 0 5px 0;
+}
+
+
+.dropdown_info ul li a{
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+}
+
+.dropdown_info ul li a:hover{
+    color: rgba(99, 129, 139, 0.959)
+}
+
+.show{
+    display: block;
+    pointer-events: all;
+    background-color: rgb(245, 245, 245);
+}
+
+.hide{
+    display: none;
+}

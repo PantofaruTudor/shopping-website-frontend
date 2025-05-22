@@ -1,0 +1,111 @@
+#navigation{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#navigation a{
+  margin-right: 10%;
+}
+
+#navigation a:last-child{
+  margin-right: 0;
+}
+
+
+
+/* CONTAINER PENTRU LOG-IN SI REGISTER  /////////////////////////////////*/
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.Auth-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  border-radius: 20px;
+  padding:20px;
+
+}
+
+.Auth-container{
+  background: linear-gradient(90deg,
+    #f6e6b8,   /* softer yellow */
+    #ffe0cc,   /* softer orange */
+    #dbeafe,   /* softer blue */
+    #eaf6fb,   /* softer light blue */
+    #ffd6df,   /* softer pink */
+    #d6f5e3    /* softer green */);
+  background-size: 200% 200%;         
+  animation: gradientMove 6s linear infinite;
+
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  100% {background-position: 200% 50%;}
+}
+
+/* //////////////////////////////////////////////////////////////  */
+
+
+
+
+/* STYLING PENTRU FORM */
+
+.Auth-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+
+.form-label, .Auth-container label {
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.form-control, .Auth-container input[type="email"], .Auth-container input[type="password"] {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: border 0.2s;
+}
+
+.form-control:focus, .Auth-container input:focus {
+  border: 1.5px solid #111;
+  outline: none;
+  background: #fff;
+}
+
+.Auth-container button, .Auth-container .btn {
+  width: 100%;
+  padding: 14px 0;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+
+.Auth-container button:hover, .Auth-container .btn:hover {
+  background: #222;
+}
+
+.text-danger {
+  color: #e53935;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
