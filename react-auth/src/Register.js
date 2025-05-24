@@ -54,7 +54,7 @@ export default function Register() {
         }
        }
        axios(configuration)
-       .then((result)=> {setRegister(true);console.log("User registered successfully")})
+       .then((result)=> {console.log("User registered successfully")})
        .catch((error)=> {error = new Error()})
     }
 
