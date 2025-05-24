@@ -17,9 +17,11 @@ export default function Login()
         e.preventDefault()
         setSubmitted(true)
 
+        const apiUrl = process.env.REACT_APP_API_URL
+
         const configuration = {
             method: "post", 
-            url: "http://localhost:5000/auth/login", 
+            url: `${apiUrl}/auth/register`,  
             data:{
                 email,
                 password

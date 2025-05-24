@@ -44,9 +44,11 @@ export default function Register() {
         if(!valid)
             return 
         
+        const apiUrl = process.env.REACT_APP_API_URL
+
         const configuration = {
         method: "post", 
-        url: "http://localhost:5000/auth/register", 
+        url: `${apiUrl}/auth/register`, 
         //url: "https://shopping-website-backend-ounn.onrender.com/auth/register", 
         data: {
             email,
