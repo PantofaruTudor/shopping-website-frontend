@@ -7,7 +7,6 @@ export default function Register() {
     // Move useState inside the function component
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [register, setRegister] = useState(false);
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
 
