@@ -33,7 +33,7 @@ export default function Login()
             setLogin(true)
             setError("")
             cookies.set("TOKEN", result.data.token, {path:"/"})
-            window.location.href = "/log-in/auth"
+            window.location.href = "/auth"
         })
         .catch((error)=>{
             // error = new Error()
