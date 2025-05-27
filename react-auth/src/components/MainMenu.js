@@ -1,5 +1,5 @@
 import React, { useState,useRef } from 'react';
-import './main_menu(copy).css'; // Corrected CSS import path
+import '../styles/main_menu(copy).css'; // Corrected CSS import path
 
 export default function MainMenuHover() {
 
