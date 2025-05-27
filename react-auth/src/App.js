@@ -1,14 +1,14 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import { Container, Col, Row } from "react-bootstrap";
-import Account from './components/AccountComponent';
-import MainMenuHover from "./components/MainMenu";
-import FreeComponent from './components/FreeComponent';
-import AuthComponent from './components/AuthComponent';
-import ProtectedRoutes from './ProtectedRoutes';
+// import Account from './components/AccountComponent';
+// import FreeComponent from './components/FreeComponent';
+// import AuthComponent from './components/AuthComponent';
+// import ProtectedRoutes from './ProtectedRoutes';
 import SlideBanner from './components/SlideBanner'
-
-
+import MainMenuHover from "./components/MainMenu";
+import BrandsGrid from './components/BrandsGrid';
+import UpcomingItems from './components/UpcomingGrid'
 function App() {
   return (
     <>
@@ -34,6 +34,8 @@ function App() {
         </Switch> */}
 
           <SlideBanner/>
+          <BrandsGrid/>
+          <UpcomingItems/>
       </Container>
     </>
   );
