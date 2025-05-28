@@ -9,13 +9,15 @@ export default function UpcomingGrid(){
         const fetchData = async()=>{
             try{
                 const response = await axios.get("https://shopping-website-backend-8yq1.onrender.com/api/v1/products")
+                console.log("FINISHED FETCHING")
                 setItems(response.data)
             }
             catch(error){
                 console.error("Error fetching data:", error)
             }
         }
-    })
+        fetchData()
+    },[])
 
 
     return (
@@ -31,7 +33,7 @@ export default function UpcomingGrid(){
             <div className="upcoming-border-grid">
                 <div className="upcoming-item-grid">
                     {items.map(item=>(
-                        <div key={item.id}>{item.name}</div>
+                        <div className="product-item-upcoming" key={item.id}>{item.name}</div>
                     ))}
                 {/* Upcoming items go here */}
                 </div>
