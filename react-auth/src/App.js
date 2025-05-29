@@ -9,6 +9,9 @@ import SlideBanner from './components/SlideBanner'
 import MainMenuHover from "./components/MainMenu";
 import BrandsGrid from './components/BrandsGrid';
 import UpcomingItems from './components/UpcomingGrid'
+import NewsContainer from './components/NewsContainer';
+
+
 function App() {
   return (
     <>
@@ -36,6 +39,7 @@ function App() {
           <SlideBanner/>
           <BrandsGrid/>
           <UpcomingItems/>
+          <NewsContainer/>
       </Container>
     </>
   );

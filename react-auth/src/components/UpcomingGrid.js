@@ -57,9 +57,9 @@ export default function UpcomingGrid(){
                     {items.map(item=>{
                         const {brand, images} = item
                         return(
-                            <div className="product-item-upcoming" key={item.id}>
+                            <div className="product-item-upcoming" key={item.name}>
                                 <img className="main_image" src={images[0]}/>
-                                <div className="item-favourite-name-box"><h2>{item.brand}</h2></div>
+                                <div className="item-favourite-name-box"><h2>{brand}</h2></div>
                                 <div className="upcoming_item_timer">{getTimerString(item.releaseDate)}</div>
                             </div>
                         )
