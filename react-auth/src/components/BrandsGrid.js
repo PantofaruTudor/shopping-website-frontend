@@ -26,6 +26,7 @@ export default function BrandsGrid(){
         {
             const scrollPosition = window.scrollY
             const slider = sliderRef.current
+            
             if(!slider)
                 return
             if(window.innerWidth > 600){

@@ -1,23 +1,45 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios"
 
 
 export default function UpcomingGrid(){
 
     const [items,setItems] = useState([])
+    const [now, setNow] = useState(Date.now())
+
     useEffect(()=>{
         const fetchData = async()=>{
             try{
                 const response = await axios.get("https://shopping-website-backend-8yq1.onrender.com/api/v1/products")
+                const upcomingItems = response.data.products.filter(item=>item.upcoming === true)
+                setItems(upcomingItems)
                 console.log("FINISHED FETCHING")
-                setItems(response.data)
             }
             catch(error){
                 console.error("Error fetching data:", error)
             }
         }
+
         fetchData()
     },[])
+
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            setNow(Date.now())
+        },1000)
+        return ()=>clearInterval(interval)
+    },[])
+
+    const getTimerString = ()=>{
+
+        const releaseDate = new Date('2025-10-10T12:00:00').getTime()
+        const remaining = releaseDate - now
+        const days = Math.floor(remaining / (1000 * 60 * 60 *24))
+        const hours = Math.floor((remaining % (1000 * 60 * 60 *24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((remaining % (1000 * 60 * 60 )) / (1000 * 60))
+        const seconds = Math.floor((remaining % (1000 * 60 ))/ 1000)
+        return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
 
 
     return (
@@ -32,9 +54,16 @@ export default function UpcomingGrid(){
 
             <div className="upcoming-border-grid">
                 <div className="upcoming-item-grid">
-                    {items.map(item=>(
-                        <div className="product-item-upcoming" key={item.id}>{item.name}</div>
-                    ))}
+                    {items.map(item=>{
+                        const {brand, images} = item
+                        return(
+                            <div className="product-item-upcoming" key={item.id}>
+                                <img className="main_image" src={images[0]}/>
+                                <div className="item-favourite-name-box"><h2>{item.brand}</h2></div>
+                                <div className="upcoming_item_timer">{getTimerString(item.releaseDate)}</div>
+                            </div>
+                        )
+                    })}
                 {/* Upcoming items go here */}
                 </div>
                 <button className="previous scroll-button">&#10094;</button>
