@@ -11,37 +11,22 @@ import BrandsGrid from './components/BrandsGrid';
 import UpcomingItems from './components/UpcomingGrid'
 import NewsContainer from './components/NewsContainer';
 import ProductsProvider from './components/ProductsProvider';
+import AccountComponent from './registerComponents/AccountComponent'
+
 
 function App() {
   return (
     <>
       <MainMenuHover/>
       <Container>
-        {/* <Row>
-          <Col className="text-center">
-            <h1>React Authentication Tutorial</h1>
+          <Switch>
 
-            <section id="navigation">
-              <a href="/">Home</a>
-              <a href="/free">Free Component</a>
-              <a href="/auth">Auth Component</a>
-            </section>
-          </Col>
-
-        </Row>
-
-        <Switch>
-          <Route exact path="/" component={Account} />
-          <Route exact path="/free" component={FreeComponent} />
-          <ProtectedRoutes exact path="/auth" component={AuthComponent} />
-        </Switch> */}
-
+          </Switch>
           <SlideBanner/>
           <BrandsGrid/>
 
           <ProductsProvider/>
 
-          {/* <UpcomingItems/>l */}
           <NewsContainer/>
       </Container>
     </>
