@@ -10,7 +10,7 @@ import MainMenuHover from "./components/MainMenu";
 import BrandsGrid from './components/BrandsGrid';
 import UpcomingItems from './components/UpcomingGrid'
 import NewsContainer from './components/NewsContainer';
-
+import ProductsProvider from './components/ProductsProvider';
 
 function App() {
   return (
@@ -38,7 +38,10 @@ function App() {
 
           <SlideBanner/>
           <BrandsGrid/>
-          <UpcomingItems/>
+
+          <ProductsProvider/>
+
+          {/* <UpcomingItems/>l */}
           <NewsContainer/>
       </Container>
     </>

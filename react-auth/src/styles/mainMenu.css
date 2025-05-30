@@ -370,9 +370,9 @@
 
 
 /* ADAUGARI LA SALES&NOUTATI ITEMS GRID  */
-#Noutati-grid .items-grid{
+.items-grid{
     margin: 25px;
-    width: auto;
+    width: auto !important;
 }
 
 #Noutati-grid > *{

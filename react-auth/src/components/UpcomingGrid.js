@@ -1,27 +1,24 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios"
 
+export default function UpcomingGrid({items = []}){
 
-export default function UpcomingGrid(){
+    const [now, setNow] = useState(Date.now())    
+    // const [items,setItems] = useState([])
+    // useEffect(()=>{
+    //     const fetchData = async()=>{
+    //         try{
+    //             const response = await axios.get("https://shopping-website-backend-8yq1.onrender.com/api/v1/products")
+    //             const upcomingItems = response.data.products.filter(item=>item.upcoming === true)
+    //             setItems(upcomingItems)
+    //             console.log("FINISHED FETCHING")
+    //         }
+    //         catch(error){
+    //             console.error("Error fetching data:", error)
+    //         }
+    //     }
 
-    const [items,setItems] = useState([])
-    const [now, setNow] = useState(Date.now())
-
-    useEffect(()=>{
-        const fetchData = async()=>{
-            try{
-                const response = await axios.get("https://shopping-website-backend-8yq1.onrender.com/api/v1/products")
-                const upcomingItems = response.data.products.filter(item=>item.upcoming === true)
-                setItems(upcomingItems)
-                console.log("FINISHED FETCHING")
-            }
-            catch(error){
-                console.error("Error fetching data:", error)
-            }
-        }
-
-        fetchData()
-    },[])
+    //     fetchData()
+    // },[])
 
     useEffect(()=>{
         const interval = setInterval(()=>{

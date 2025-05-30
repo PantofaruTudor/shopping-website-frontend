@@ -7,8 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import "./styles/index.css"
 import "./styles/mainMenu.css"
 import "./styles/main_menu(copy).css"
-import "./styles/product_temp.css"
 import "./styles/website.css"
+import "./styles/product_temp.css"
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
