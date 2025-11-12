@@ -18,6 +18,7 @@ export default function Login()
         setSubmitted(true)
 
         const apiUrl = process.env.REACT_APP_API_URL
+        console.log('apiUrl')
 
         const configuration = {
             method: "post", 
