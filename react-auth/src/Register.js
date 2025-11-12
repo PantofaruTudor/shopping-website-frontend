@@ -45,6 +45,7 @@ export default function Register() {
             return 
         
         const apiUrl = process.env.REACT_APP_API_URL
+        console.log(apiUrl)
 
         const configuration = {
         method: "post", 
@@ -57,7 +58,10 @@ export default function Register() {
        }
        axios(configuration)
        .then((result)=> {console.log("User registered successfully")})
-       .catch((error)=> {error = new Error()})
+       .catch((error)=> {
+            console.log(error.response.data.message)
+            //console.log(error.response.data.error)
+       })
     }
 
 
