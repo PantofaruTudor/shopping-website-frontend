@@ -12,6 +12,7 @@ import UpcomingItems from './components/UpcomingGrid'
 import NewsContainer from './components/NewsContainer';
 import ProductsProvider from './components/ProductsProvider';
 import AccountComponent from './registerComponents/AccountComponent'
+import Wishlist from './wishlistComponents/WishlistComponent';
 
 
 function App() {
@@ -20,14 +21,19 @@ function App() {
       <MainMenuHover/>
       <Container>
           <Switch>
-
+            <Route exact path="/">
+              <SlideBanner/>
+              <BrandsGrid/>
+              <ProductsProvider/>
+              <NewsContainer/>
+            </Route>
+            <Route path="/contul-meu">
+              <AccountComponent />
+            </Route>
+            <Route path="/wishlist">
+              <Wishlist />
+            </Route>
           </Switch>
-          <SlideBanner/>
-          <BrandsGrid/>
-
-          <ProductsProvider/>
-
-          <NewsContainer/>
       </Container>
     </>
   );

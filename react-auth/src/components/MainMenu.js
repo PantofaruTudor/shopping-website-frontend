@@ -1,4 +1,5 @@
 import React, { useState,useRef } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/main_menu(copy).css'; // Corrected CSS import path
 
 export default function MainMenuHover() {
@@ -25,7 +26,7 @@ export default function MainMenuHover() {
             <div className="main_menu">
                 <ul className="main_menu_list">
                     <div className="main_menu_segments" id="left_main_menu">
-                        <li><a href="/info"><img src="/MainMenu/information.svg" alt="Info" /></a></li>
+                        <li><Link to="/info"><img src="/MainMenu/information.svg" alt="Info" /></Link></li>
                         <li>
                             <div className="search-container">
                                 <input type="text" placeholder="Search..." className="search-input" id="search-input" />
@@ -36,14 +37,14 @@ export default function MainMenuHover() {
                         </li>
                     </div>
                     <div className="main_menu_segments" id="center_main_menu">
-                        <li><a href="/barbati" className="gen" id="barbati">Barbati</a></li>
-                        <li><a href="/"><img src="/MainMenu/temp_logo.svg" alt="Logo" /></a></li>
-                        <li><a href="/femei" className="gen" id="femei">Femei</a></li>
+                        <li><Link to="/barbati" className="gen" id="barbati">Barbati</Link></li>
+                        <li><Link to="/"><img src="/MainMenu/temp_logo.svg" alt="Logo" /></Link></li>
+                        <li><Link to="/femei" className="gen" id="femei">Femei</Link></li>
                     </div>
                     <div className="main_menu_segments" id="right_main_menu">
-                        <li><a href="/cart"><img src="/MainMenu/market.svg" alt="Market" /></a></li>
-                        <li><a href="/Wishlist"><img src="/MainMenu/heart.svg" alt="Heart" /></a></li>
-                        <li><a href="/contul-meu"><img src="/MainMenu/user.svg" alt="User" /></a></li>
+                        <li><Link to="/cart"><img src="/MainMenu/market.svg" alt="Market" /></Link></li>
+                        <li><Link to="/Wishlist"><img src="/MainMenu/heart.svg" alt="Heart" /></Link></li>
+                        <li><Link to="/contul-meu"><img src="/MainMenu/user.svg" alt="User" /></Link></li>
                     </div>
                 </ul>
             </div>
@@ -55,35 +56,35 @@ export default function MainMenuHover() {
                         onMouseEnter={() => handleMouseEnter('noutati')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <a href="/noutati">Noutati</a>
+                        <Link to="/noutati">Noutati</Link>
                     </li>
                     <li
                         className="categorii imbracaminte"
                         onMouseEnter={() => handleMouseEnter('imbracaminte')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <a href="/imbracaminte">Imbracaminte</a>
+                        <Link to="/imbracaminte">Imbracaminte</Link>
                     </li>
                     <li
                         className="categorii incaltaminte"
                         onMouseEnter={() => handleMouseEnter('incaltaminte')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <a href="/incaltaminte">Incaltaminte</a>
+                        <Link to="/incaltaminte">Incaltaminte</Link>
                     </li>
                     <li
                         className="categorii accesorii"
                         onMouseEnter={() => handleMouseEnter('accesorii')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <a href="/accesorii">Accesorii</a>
+                        <Link to="/accesorii">Accesorii</Link>
                     </li>
                     <li
                         className="categorii sale"
                         onMouseEnter={() => handleMouseEnter('sale')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <a href="/sale">Sale</a>
+                        <Link to="/sale">Sale</Link>
                     </li>
                 </ul>
                 <div 

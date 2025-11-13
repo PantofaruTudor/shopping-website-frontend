@@ -9,6 +9,8 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("")
     const [passwordError, setPasswordError] = useState("")
+    const [usedEmail, setUsedEmail] = useState("") 
+
 
 
     const validateEmail = (email) => {
@@ -57,10 +59,16 @@ export default function Register() {
         }
        }
        axios(configuration)
-       .then((result)=> {console.log("User registered successfully")})
+       .then((result)=> {
+            console.log("User registered successfully")
+            setUsedEmail("")
+        })
        .catch((error)=> {
             console.log(error.response.data.message)
-            //console.log(error.response.data.error)
+            setUsedEmail(error.response.data.message)
+            setTimeout(()=>{
+                setUsedEmail("")
+            },3000)
        })
     }
 
@@ -70,6 +78,13 @@ export default function Register() {
             <h2>Register</h2>
             <Form onSubmit={(e)=>handleSubmit(e)}>
                 
+                {usedEmail && 
+                (
+                    <div className="alert alert-danger" style={{color:"red"}}>
+                        {usedEmail}
+                    </div>
+                )}
+
                 {/* email */}
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

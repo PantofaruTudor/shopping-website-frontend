@@ -22,7 +22,7 @@ export default function Login()
 
         const configuration = {
             method: "post", 
-            url: `${apiUrl}/auth/register`,  
+            url: `${apiUrl}/auth/login`,  
             data:{
                 email,
                 password
