@@ -1,0 +1,122 @@
+.WL_container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.WL_header_section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 40px;
+}
+
+.WL_Icon_header {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.WL_Icon_header img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.WL_header {
+    flex-direction: row;
+}
+
+.wishlist-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+}
+
+.wishlist-description {
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-size: 15px;
+}
+
+.WL_edit {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    gap: 8px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.WL_edit:hover {
+    background: #333;
+}
+
+.WL_edit:hover .edit-wishlist {
+    color: white;
+}
+
+.WL_edit img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.edit-wishlist {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.WL_list {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 200px;
+}
+
+/* Responsive pentru mobile */
+@media (max-width: 768px) {
+    .WL_header_section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .WL_Icon_header {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .WL_Icon_header img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .wishlist-title {
+        font-size: 24px;
+    }
+}

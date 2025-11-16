@@ -1,13 +1,56 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { addItemWL } from './addProductWL';
+import { WishlistContext } from '../context/WishlistContext';
+import Cookies from 'universal-cookie'
+import axios from 'axios'
+const cookies = new Cookies()
 
-export default function ProductItem({ brand, images, price, id, name, title }) {
+export default function ProductItem({ brand, images, price, _id, name, title }) {
     const frontImages = images.slice(0, 2);
     const [hovered, setHovered] = useState(false);
+    
+    const {isInWishlist, addToWishlist} = useContext(WishlistContext)
+    const inWishlist = isInWishlist(_id)
+
+    const handleItemWL = async() => {
+
+        const apiUrl = process.env.REACT_APP_API_URL
+        const token = cookies.get("TOKEN")
+        try{
+
+            if(inWishlist){
+                console.log(`Removing ${name} from wishlist database`)
+                await axios.delete(`${apiUrl}/api/wishlist/remove/${_id}`,{
+                    headers:{
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                console.log('removed from wishlist')
+            }
+            else{
+                console.log(`Adding ${name} to wishlist`)
+                await axios.post(`${apiUrl}/api/wishlist/add`,
+                    {productID: _id},
+                    {
+                        headers:{
+                            Authorization: `Bearer ${token}`
+                        }
+                    }
+                )
+            }
+        }
+        catch(error){
+            console.error('Error with handleItemWL')
+        }
+
+    }
+
+
 
     return (
         <div
             className='product-item'
-            key={id}
+            key={_id}
             data-images={JSON.stringify(frontImages)}
             >
             <img
@@ -25,8 +68,10 @@ export default function ProductItem({ brand, images, price, id, name, title }) {
                     {title === "sales" && (
                         <p id='sale-price'>{Math.floor((price - price / 10) * 10) / 10}$</p>
                     )}
-                    <button className='favourite-item'>
-                        <img src='white_star.png' alt="favourite" />
+                    <button 
+                        className='favourite-item'
+                        onClick={handleItemWL}>
+                        <img src={inWishlist ? '/black_star.png': '/white_star.png'} alt="favourite" />
                     </button>
                 </div>
             </div>

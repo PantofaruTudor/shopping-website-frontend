@@ -44,7 +44,7 @@ export default function MainMenuHover() {
                     <div className="main_menu_segments" id="right_main_menu">
                         <li><Link to="/cart"><img src="/MainMenu/market.svg" alt="Market" /></Link></li>
                         <li><Link to="/Wishlist"><img src="/MainMenu/heart.svg" alt="Heart" /></Link></li>
-                        <li><Link to="/contul-meu"><img src="/MainMenu/user.svg" alt="User" /></Link></li>
+                        <li><Link to="/Auth"><img src="/MainMenu/user.svg" alt="User" /></Link></li>
                     </div>
                 </ul>
             </div>

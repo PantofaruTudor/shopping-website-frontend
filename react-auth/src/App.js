@@ -13,11 +13,13 @@ import NewsContainer from './components/NewsContainer';
 import ProductsProvider from './components/ProductsProvider';
 import AccountComponent from './registerComponents/AccountComponent'
 import Wishlist from './wishlistComponents/WishlistComponent';
-
+import AuthComponent from './components/AuthComponent';
+import ProtectedRoutes from './ProtectedRoutes'
 
 function App() {
   return (
     <>
+
       <MainMenuHover/>
       <Container>
           <Switch>
@@ -30,9 +32,8 @@ function App() {
             <Route path="/contul-meu">
               <AccountComponent />
             </Route>
-            <Route path="/wishlist">
-              <Wishlist />
-            </Route>
+            <ProtectedRoutes path="/Auth" component={AuthComponent}/>
+            <ProtectedRoutes path="/Wishlist" component={Wishlist}/>
           </Switch>
       </Container>
     </>
