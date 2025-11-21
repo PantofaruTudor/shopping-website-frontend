@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { addItemWL } from './addProductWL';
 import { WishlistContext } from '../context/WishlistContext';
 import Cookies from 'universal-cookie'
 import axios from 'axios'
@@ -9,7 +8,7 @@ export default function ProductItem({ brand, images, price, _id, name, title }) 
     const frontImages = images.slice(0, 2);
     const [hovered, setHovered] = useState(false);
     
-    const {isInWishlist, addToWishlist} = useContext(WishlistContext)
+    const {isInWishlist, refreshWishlist} = useContext(WishlistContext)
     const inWishlist = isInWishlist(_id)
 
     const handleItemWL = async() => {
