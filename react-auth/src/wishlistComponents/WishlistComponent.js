@@ -49,7 +49,7 @@ export default function Wishlist(){
         <div className='WL_container'>
             <div className='WL_header_section'>
                 <div className='WL_Icon_header'>
-                    <img src='/Wishlist/complete.png'></img>
+                    <img src='/Wishlist/complete.png' alt='wishlist icon'></img>
                 </div>
 
                 <div className='WL_header'>
@@ -62,7 +62,7 @@ export default function Wishlist(){
                         mai ușor atunci când vei avea nevoie.
                     </p>
                     <div className='WL_edit'>
-                        <img src='/Wishlist/edit.png'></img>
+                        <img src='/Wishlist/edit.png' alt='wishlist edit icon'></img>
                         <button className='edit-wishlist'>
                         Editează wishlist
                         </button>

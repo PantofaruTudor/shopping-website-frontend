@@ -49,7 +49,7 @@ export default function SlideBanner(){
                         className = {`slides_images${idx === slideIndex ? " displaySlide" : ""}`}
                         src={src}
                         style={{display: idx===slideIndex ? "block" : "none"}}
-                    
+                        alt='slider icons'
                     />
                 ))}
 
