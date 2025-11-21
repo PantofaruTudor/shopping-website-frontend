@@ -9,7 +9,6 @@ import ItemsGrid from '../components/ItemsGrid'
 const cookies = new Cookies()
 
 export default function Wishlist(){
-    const history = useHistory()
     const [isLoading,setIsLoading] = useState(true)
     const [wishlistItems, setWishlistItems] = useState([])
 

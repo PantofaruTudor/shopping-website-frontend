@@ -8,7 +8,7 @@ export default function ProductItem({ brand, images, price, _id, name, title }) 
     const frontImages = images.slice(0, 2);
     const [hovered, setHovered] = useState(false);
     
-    const {isInWishlist, refreshWishlist} = useContext(WishlistContext)
+    const {isInWishlist} = useContext(WishlistContext)
     const inWishlist = isInWishlist(_id)
 
     const handleItemWL = async() => {

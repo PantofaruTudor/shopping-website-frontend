@@ -44,7 +44,7 @@ export default function UpcomingGrid({items = []}){
             <div className="upcoming-product-header">
                 <p className="upcoming-header-text">UPCOMING RELEASES</p>
                 <div className="upcoming_button_class">
-                <a className="upcoming_button" href="#">Vezi toate</a>
+                <a className="upcoming_button" href="/upcoming">Vezi toate</a>
                 </div>
                 <img src="/UpcomingGrid/next-date.png" className="next-date-icon" alt="Next date" />
             </div>
