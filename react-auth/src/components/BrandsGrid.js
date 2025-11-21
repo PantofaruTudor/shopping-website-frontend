@@ -49,7 +49,7 @@ export default function BrandsGrid(){
                 <div className="brands-slider" ref={sliderRef}>
                     {brands.map((logo)=>(
                         <div className="logo-box" key={logo}>
-                            <img src={`/BrandsGrid/${logo}`} />
+                            <img src={`/BrandsGrid/${logo}`} alt='brand logo icon'/>
                         </div>
                     ))}
                 </div>
