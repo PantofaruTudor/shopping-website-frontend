@@ -9,7 +9,7 @@ export default function NoutatiGrid({items=[]}){
     return(
         <div id='Noutati_Grid'>
             <ItemsGrid items={newItems} gridClass="noutati-product-grid" button="Noutati"  title="noutati"/>
-            <ItemsGrid items={saleItems} gridClass="sales-product-grid"  button="Reduceri" title="sales"/>
+            <ItemsGrid items={saleItems} gridClass="sales-product-grid"  button="Sale" title="sales"/>
         </div>
     )
 

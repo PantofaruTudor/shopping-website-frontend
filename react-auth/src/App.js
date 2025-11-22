@@ -15,6 +15,7 @@ import AccountComponent from './registerComponents/AccountComponent'
 import Wishlist from './wishlistComponents/WishlistComponent';
 import AuthComponent from './components/AuthComponent';
 import ProtectedRoutes from './ProtectedRoutes'
+import ItemsGridPage from './components/ItemsGridPage';
 
 function App() {
   return (
@@ -26,12 +27,23 @@ function App() {
             <Route exact path="/">
               <SlideBanner/>
               <BrandsGrid/>
-              <ProductsProvider/>
+              <ProductsProvider category="homepage"/>
               <NewsContainer/>
             </Route>
+
             <Route path="/contul-meu">
               <AccountComponent />
             </Route>
+
+            <Route path="/noutati">
+              <ProductsProvider category="noutati"/>
+            </Route>
+
+            <Route path="/sales">
+              <ProductsProvider category="sales"/>
+            </Route>
+
+
             <ProtectedRoutes path="/Auth" component={AuthComponent}/>
             <ProtectedRoutes path="/Wishlist" component={Wishlist}/>
           </Switch>
