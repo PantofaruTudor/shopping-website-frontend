@@ -46,9 +46,29 @@ p,h2{
 }
 
 
+/* FILTERS+ITEMS GRID TEMPLATE*/
+
+.filter-items{
+    display: flex;
+
+}
+
+.noutati-full-grid{
+    width: 100%;
+}
+
+@media (max-width: 850px)
+{
+    .filters-sidebar{
+        display: none;
+    }
+}
+
+
+
 /*  PAGINATION BUTTONS //////////////////////*/
 
-.number-buttons{
+.pagination-board{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +76,7 @@ p,h2{
     gap:20px;
 }
 
-.pagination-button{
+.pagination-board button{
     font-size: 1.2rem;
     padding: 6px;
     border-radius: 15px;

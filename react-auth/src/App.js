@@ -36,11 +36,11 @@ function App() {
             </Route>
 
             <Route path="/noutati">
-              <ProductsProvider category="noutati"/>
+              <ItemsGridPage category="noutati"/>
             </Route>
 
             <Route path="/sales">
-              <ProductsProvider category="sales"/>
+              <ItemsGridPage category="sales"/>
             </Route>
 
 

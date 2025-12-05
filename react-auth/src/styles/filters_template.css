@@ -1,0 +1,53 @@
+/* src/styles/filters_template.css */
+.filters-sidebar {
+  width: 150px;
+  min-width: 150px;
+
+  flex-shrink: 0;
+  margin: 25px;
+  overflow: hidden;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.filter-header h4 {
+  margin: 0;
+}
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-content label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-content input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 20px;
+  border-color: black;
+  font-family: 'Courier New', Courier, monospace;
+}
