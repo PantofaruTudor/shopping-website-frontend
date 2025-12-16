@@ -1,7 +1,7 @@
 import React,{createContext,useState,useEffect} from 'react'
 import axios from 'axios'
 import Cookies from 'universal-cookie'
-
+import { AuthProvider } from './AuthContext'
 const cookies = new Cookies()
 
 export const WishlistContext = createContext()
@@ -43,6 +43,9 @@ export const WishlistProvider = ({children}) =>{
     const isInWishlist = (productID)=>{
         return wishlistIDs.includes(productID)
     }
+    const addToWishlist = (productID) =>{
+        setWishlistIDs(prev=> [...prev,productID])
+    }
     const removeWishlist = (productID)=>{
         setWishlistIDs(prev=> prev.filter(id=> id !==productID))
     }
@@ -51,6 +54,7 @@ export const WishlistProvider = ({children}) =>{
         wishlistIDs,
         isLoading,
         isInWishlist,
+        addToWishlist,
         removeWishlist,
         refreshWishlist: fetchWishlistIDs
     }

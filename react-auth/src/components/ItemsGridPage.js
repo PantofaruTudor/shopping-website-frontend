@@ -24,14 +24,14 @@ const ItemsGridPage = ({category})=>{
                 const response = await axios.get(`${apiUrl}/api/v1/products`)
                 const products = response.data.products
                 console.log("API Response:", response.data)
-                console.log("Products array:", products)
                 let categoryProducts = products
                 if(category === "noutati")
-                    categoryProducts = products.filter(p=>p.sale === false && p.upcoming ===false)
+                  categoryProducts = products.filter(p=>p.sale === false && p.upcoming ===false)
                 else if(category === "sales")
-                    categoryProducts = products.filter(p =>p.sale === true)
+                  categoryProducts = products.filter(p =>p.sale === true)
+                console.log("Products array:", categoryProducts)
                 setAllProducts(categoryProducts)
-                setFilteredProducts(categoryProducts)
+                setFilteredProducts(categoryProducts) 
 
             }
             catch(error)
@@ -87,7 +87,7 @@ const ItemsGridPage = ({category})=>{
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
-          onPageChange={setCurrentPage }
+          onPageChange={setCurrentPage}
         />
       </div>
     </div>

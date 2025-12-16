@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Cookies  from 'universal-cookie'
 import './WishlistComponent.css'
@@ -9,7 +9,7 @@ import ItemsGrid from '../components/ItemsGrid'
 const cookies = new Cookies()
 
 export default function Wishlist(){
-    const history = useHistory()
+    const navigate = useNavigate()
     const [isLoading,setIsLoading] = useState(true)
     const [wishlistItems, setWishlistItems] = useState([])
 

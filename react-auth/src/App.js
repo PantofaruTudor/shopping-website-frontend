@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Container, Col, Row } from "react-bootstrap";
 // import Account from './components/AccountComponent';
 // import FreeComponent from './components/FreeComponent';
@@ -23,30 +23,30 @@ function App() {
 
       <MainMenuHover/>
       <Container>
-          <Switch>
-            <Route exact path="/">
-              <SlideBanner/>
-              <BrandsGrid/>
-              <ProductsProvider category="homepage"/>
-              <NewsContainer/>
-            </Route>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <SlideBanner/>
+                <BrandsGrid/>
+                <ProductsProvider category="homepage"/>
+                <NewsContainer/>
+              </>
+            } />
 
-            <Route path="/contul-meu">
-              <AccountComponent />
-            </Route>
+            <Route path="/contul-meu" element={<AccountComponent />} />
 
-            <Route path="/noutati">
-              <ItemsGridPage category="noutati"/>
-            </Route>
+            <Route path="/noutati" element={<ItemsGridPage category="noutati"/>} />
 
-            <Route path="/sales">
-              <ItemsGridPage category="sales"/>
-            </Route>
+            <Route path="/sales" element={<ItemsGridPage category="sales"/>} />
 
-
-            <ProtectedRoutes path="/Auth" component={AuthComponent}/>
-            <ProtectedRoutes path="/Wishlist" component={Wishlist}/>
-          </Switch>
+            <Route path="/Auth" element={<AuthComponent/>} />
+            
+            <Route path="/Wishlist" element={
+              <ProtectedRoutes>
+                <Wishlist/>
+              </ProtectedRoutes>
+            } />
+          </Routes>
       </Container>
     </>
   );
