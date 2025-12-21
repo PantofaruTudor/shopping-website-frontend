@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { WishlistContext } from '../context/WishlistContext';
+import { CartContext } from '../context/CartContext';
 import { AuthContext } from '../context/AuthContext';
 import Cookies from 'universal-cookie'
 import axios from 'axios'
@@ -10,6 +11,7 @@ export default function ProductItem({ brand, images, price, _id, name, title }) 
     const frontImages = images.slice(0, 2);
     const [hovered, setHovered] = useState(false);
     
+    const {addToCart, openCart} = useContext(CartContext)
     const {isAuthenticated} = useContext(AuthContext)
     const {isInWishlist, addToWishlist,removeWishlist} = useContext(WishlistContext)
     const inWishlist = isInWishlist(_id)
@@ -62,13 +64,16 @@ export default function ProductItem({ brand, images, price, _id, name, title }) 
     }
 
     const addItemCart = async() => {
-        try{
-
+        const cartItem = {
+            productID: _id,
+            name: name,
+            brand: brand,
+            price: price,
+            image: images[0],
+            quantity: 1
         }
-        catch(error)
-        {
-
-        }
+        addToCart(cartItem)
+        //openCart()
     }
 
 

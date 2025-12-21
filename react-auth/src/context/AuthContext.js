@@ -1,5 +1,4 @@
-import React, {createContext, useState, useEffect, useContext} from 'react'
-import axios from 'axios'
+import {createContext, useState, useEffect, useContext} from 'react'
 import Cookies from 'universal-cookie'
 
 const cookies = new Cookies()
