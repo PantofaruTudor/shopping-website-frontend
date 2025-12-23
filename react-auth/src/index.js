@@ -11,14 +11,20 @@ import "./styles/website.css"
 import "./styles/product_temp.css"
 
 import { WishlistProvider } from './context/WishlistContext';
+import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <WishlistProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </WishlistProvider>
+  <AuthProvider>
+    <WishlistProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartProvider>
+    </WishlistProvider>
+  </AuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

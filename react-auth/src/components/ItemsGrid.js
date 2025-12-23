@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import ProductItem from './ProductItem';
 
 export default function ItemsGrid({ items = [], gridClass, button, title }) {
@@ -7,7 +8,7 @@ export default function ItemsGrid({ items = [], gridClass, button, title }) {
 
             {button && title && (
                 <div className={`${title}_button_class`}>
-                    <a href={`/${title}`} className='noutati_button'>{button}</a>
+                    <Link to={`/${title}`} className='noutati_button'>{button}</Link>
                 </div>
             )}
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom';
-import { Container} from "react-bootstrap";
+import { Routes, Route } from 'react-router-dom';
+import { Container, Col, Row } from "react-bootstrap";
 // import Account from './components/AccountComponent';
 // import FreeComponent from './components/FreeComponent';
 // import AuthComponent from './components/AuthComponent';
@@ -14,26 +14,40 @@ import AccountComponent from './registerComponents/AccountComponent'
 import Wishlist from './wishlistComponents/WishlistComponent';
 import AuthComponent from './components/AuthComponent';
 import ProtectedRoutes from './ProtectedRoutes'
+import ItemsGridPage from './components/ItemsGridPage';
+import CartComponent from './components/CartComponent';
 
 function App() {
   return (
     <>
 
       <MainMenuHover/>
+      <CartComponent/>
       <Container>
-          <Switch>
-            <Route exact path="/">
-              <SlideBanner/>
-              <BrandsGrid/>
-              <ProductsProvider/>
-              <NewsContainer/>
-            </Route>
-            <Route path="/contul-meu">
-              <AccountComponent />
-            </Route>
-            <ProtectedRoutes path="/Auth" component={AuthComponent}/>
-            <ProtectedRoutes path="/Wishlist" component={Wishlist}/>
-          </Switch>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <SlideBanner/>
+                <BrandsGrid/>
+                <ProductsProvider category="homepage"/>
+                <NewsContainer/>
+              </>
+            } />
+
+            <Route path="/contul-meu" element={<AccountComponent />} />
+
+            <Route path="/noutati" element={<ItemsGridPage category="noutati"/>} />
+
+            <Route path="/sales" element={<ItemsGridPage category="sales"/>} />
+
+            <Route path="/Auth" element={<AuthComponent/>} />
+            
+            <Route path="/Wishlist" element={
+              <ProtectedRoutes>
+                <Wishlist/>
+              </ProtectedRoutes>
+            } />
+          </Routes>
       </Container>
     </>
   );

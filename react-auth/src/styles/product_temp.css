@@ -32,7 +32,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.favourite-item{
+.favourite-item, .add-to-cart{
     border: none;
     width: 30px;
     height: 30px;
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .item-price-favourite-box .sales-product-grid #full-price{
@@ -101,9 +101,9 @@ h2.item-favourite-name-box{
     overflow: hidden;
 }
 
-.favourite-item{
-    width: 20px;
-    height: 20px
+.favourite-item, .add-to-cart{
+    width: 25px;
+    height: 25px
 }
 
 

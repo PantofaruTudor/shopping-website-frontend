@@ -1,11 +1,15 @@
-import React, { useState,useRef } from 'react';
+import React, { useState,useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/main_menu(copy).css'; // Corrected CSS import path
+import { CartContext } from '../context/CartContext';
+
 
 export default function MainMenuHover() {
 
     const [activeDropdown, setActiveDropdown] = useState(null)
     const timeoutRef = useRef(null)
+
+    const {openCart, closeCart, isCartOpen} = useContext(CartContext)
 
     const handleMouseEnter = (dropdownName) => {
         if(timeoutRef.current){
@@ -42,7 +46,9 @@ export default function MainMenuHover() {
                         <li><Link to="/femei" className="gen" id="femei">Femei</Link></li>
                     </div>
                     <div className="main_menu_segments" id="right_main_menu">
-                        <li><Link to="/cart"><img src="/MainMenu/market.svg" alt="Market" /></Link></li>
+                        <li onClick={() => isCartOpen ? closeCart() : openCart()} style={{cursor: 'pointer'}}>
+                            <img src="/MainMenu/market.svg" alt="Market" />
+                        </li>
                         <li><Link to="/Wishlist"><img src="/MainMenu/heart.svg" alt="Heart" /></Link></li>
                         <li><Link to="/Auth"><img src="/MainMenu/user.svg" alt="User" /></Link></li>
                     </div>
