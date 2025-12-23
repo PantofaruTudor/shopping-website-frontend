@@ -16,12 +16,14 @@ import Wishlist from './wishlistComponents/WishlistComponent';
 import AuthComponent from './components/AuthComponent';
 import ProtectedRoutes from './ProtectedRoutes'
 import ItemsGridPage from './components/ItemsGridPage';
+import CartComponent from './components/CartComponent';
 
 function App() {
   return (
     <>
 
       <MainMenuHover/>
+      <CartComponent/>
       <Container>
           <Routes>
             <Route path="/" element={

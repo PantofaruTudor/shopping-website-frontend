@@ -1,0 +1,302 @@
+/* ========================================
+   CART BACKDROP - Blur effect on left side
+   ======================================== */
+.cart-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    z-index: 998;
+    animation: fadeIn 0.3s ease;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   CART PANEL - Sliding drawer from right
+   ======================================== */
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -450px; /* Hidden off-screen by default */
+    width: 450px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth ease-out animation */
+}
+
+/* When cart is open - slide in */
+.cart-panel.open {
+    right: 0;
+}
+
+/* ========================================
+   CART HEADER
+   ======================================== */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 20px;
+    border-bottom: 2px solid #f0f0f0;
+    background: #fafafa;
+    flex-shrink: 0;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+}
+
+.cart-header button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+
+
+/* ========================================
+   CART ITEMS - Scrollable area
+   ======================================== */
+.cart-items {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar styling */
+.cart-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Empty cart message */
+.empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 16px;
+}
+
+/* Individual cart item */
+.cart-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+    align-items: flex-start;
+    transition: background 0.2s ease;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.cart-item:hover {
+    background: #f9f9f9;
+}
+
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    border: 1px solid #e0e0e0;
+}
+
+.item-details {
+    flex: 1;
+    min-width: 0; /* Prevent text overflow */
+}
+
+.item-brand {
+    color: #888;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.item-name {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+}
+
+.item-price {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    display: block !important;
+
+
+}
+
+/* Remove button */
+.remove-btn {
+    background: rgb(228, 192, 192);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: "League Spartan", serif;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    height: 36px;
+    transition: background 0.5s ease, color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: rgb(156, 126, 126);
+    
+}
+
+.remove-btn:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   CART FOOTER - Total and checkout
+   ======================================== */
+.cart-footer {
+    padding: 20px;
+    border-top: 2px solid #e0e0e0;
+    background: #fafafa;
+    flex-shrink: 0;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #222;
+    padding: 0 4px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 16px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.checkout-btn:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   RESPONSIVE - Mobile/Tablet adjustments
+   ======================================== */
+@media (max-width: 768px) {
+    .cart-panel {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .cart-panel.open {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-header {
+        padding: 20px 16px;
+    }
+    
+    .cart-header h2 {
+        font-size: 18px;
+    }
+    
+    .cart-items {
+        padding: 12px;
+    }
+    
+    .cart-item img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .item-name {
+        font-size: 14px;
+    }
+    
+    .item-price {
+        font-size: 14px;
+    }
+    
+    .cart-footer {
+        padding: 16px;
+    }
+    
+    .cart-total {
+        font-size: 18px;
+    }
+}
