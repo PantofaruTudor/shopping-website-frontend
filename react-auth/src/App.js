@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
-import { Container, Col, Row } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 // import Account from './components/AccountComponent';
 // import FreeComponent from './components/FreeComponent';
 // import AuthComponent from './components/AuthComponent';
