@@ -37,7 +37,7 @@ const CartComponent = () =>{
                                     onClick={() => removeItemCart(item.productID)}
                                     className="remove-btn"
                                 >
-                                    <a>remove</a>
+                                    remove
                                 </button>
                             </div>
                         ))
