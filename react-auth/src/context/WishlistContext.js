@@ -1,7 +1,7 @@
 import React,{createContext,useState,useEffect} from 'react'
 import axios from 'axios'
 import Cookies from 'universal-cookie'
-import { AuthProvider } from './AuthContext'
+
 const cookies = new Cookies()
 
 export const WishlistContext = createContext()
