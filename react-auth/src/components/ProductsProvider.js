@@ -16,7 +16,7 @@ export default function ProductsProvider({category}) {
         const fetchData = async()=>{
             try{
                 const apiUrl = process.env.REACT_APP_API_URL
-                const response = await axios.get(`${apiUrl}/api/v1/products`)
+                const response = await axios.get(`${apiUrl}/api/v1/products`, { timeout: 90000 })
                 setItems(response.data.products)
                 console.log("FINISHED FETCHING")
             }
@@ -31,7 +31,7 @@ export default function ProductsProvider({category}) {
     },[])
 
     if(loading)
-        return <div>Loading items...</div>;
+        return <div>Loading items... (serverul poate avea nevoie de ~1 minut sa porneasca)</div>;
 
     if (!category || category === 'homepage') {
         return (
